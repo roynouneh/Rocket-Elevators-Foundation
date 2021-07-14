@@ -17,8 +17,8 @@ class ElevatorsTest < ApplicationSystemTestCase
     fill_in "Certificate of inspection", with: @elevator.certificate_of_inspection
     fill_in "Column", with: @elevator.column_id
     fill_in "Date of commissioning", with: @elevator.date_of_commissioning
-    fill_in "Information", with: @elevator.information
-    fill_in "Last inspection", with: @elevator.last_inspection
+    fill_in "Date of last inspection", with: @elevator.date_of_last_inspection
+    fill_in "Info", with: @elevator.info
     fill_in "Model", with: @elevator.model
     fill_in "Notes", with: @elevator.notes
     fill_in "Serial number", with: @elevator.serial_number
@@ -37,8 +37,8 @@ class ElevatorsTest < ApplicationSystemTestCase
     fill_in "Certificate of inspection", with: @elevator.certificate_of_inspection
     fill_in "Column", with: @elevator.column_id
     fill_in "Date of commissioning", with: @elevator.date_of_commissioning
-    fill_in "Information", with: @elevator.information
-    fill_in "Last inspection", with: @elevator.last_inspection
+    fill_in "Date of last inspection", with: @elevator.date_of_last_inspection
+    fill_in "Info", with: @elevator.info
     fill_in "Model", with: @elevator.model
     fill_in "Notes", with: @elevator.notes
     fill_in "Serial number", with: @elevator.serial_number

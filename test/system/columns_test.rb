@@ -17,7 +17,7 @@ class ColumnsTest < ApplicationSystemTestCase
     fill_in "Battery", with: @column.battery_id
     fill_in "Information", with: @column.information
     fill_in "Notes", with: @column.notes
-    fill_in "Num floors served", with: @column.num_floors_served
+    fill_in "Number of floors served", with: @column.number_of_floors_served
     fill_in "Status", with: @column.status
     fill_in "Type", with: @column.type
     click_on "Create Column"
@@ -33,7 +33,7 @@ class ColumnsTest < ApplicationSystemTestCase
     fill_in "Battery", with: @column.battery_id
     fill_in "Information", with: @column.information
     fill_in "Notes", with: @column.notes
-    fill_in "Num floors served", with: @column.num_floors_served
+    fill_in "Number of floors served", with: @column.number_of_floors_served
     fill_in "Status", with: @column.status
     fill_in "Type", with: @column.type
     click_on "Update Column"

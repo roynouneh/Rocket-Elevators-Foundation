@@ -31,8 +31,8 @@
 </p>
 
 <p>
-  <strong>Dept in charge of elevators:</strong>
-  <%= @lead.dept_in_charge_of_elevators %>
+  <strong>Department:</strong>
+  <%= @lead.department %>
 </p>
 
 <p>
@@ -41,13 +41,13 @@
 </p>
 
 <p>
-  <strong>Attached file:</strong>
-  <%= @lead.attached_file %>
+  <strong>Attachment:</strong>
+  <%= @lead.attachment %>
 </p>
 
 <p>
-  <strong>Date of contact request:</strong>
-  <%= @lead.created_at %>
+  <strong>Date of request:</strong>
+  <%= @lead.date_of_request %>
 </p>
 
 <%= link_to 'Edit', edit_lead_path(@lead) %> |

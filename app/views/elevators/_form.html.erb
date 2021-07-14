@@ -27,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :type %>
+    <%= form.label :type_of_elevator %>
     <%= form.text_field :type %>
   </div>
 
@@ -42,8 +42,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :last_inspection %>
-    <%= form.date_select :last_inspection %>
+    <%= form.label :date_of_last_inspection %>
+    <%= form.datetime_select :date_of_last_inspection %>
   </div>
 
   <div class="field">
@@ -52,13 +52,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :information %>
-    <%= form.text_field :information %>
+    <%= form.label :info %>
+    <%= form.text_field :info %>
   </div>
 
   <div class="field">
     <%= form.label :notes %>
-    <%= form.text_field :notes %>
+    <%= form.text_area :notes %>
   </div>
 
   <div class="actions">

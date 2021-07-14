@@ -6,11 +6,11 @@
   <thead>
     <tr>
       <th>Building</th>
-      <th>Type</th>
+      <th>Building type</th>
       <th>Status</th>
       <th>Employee</th>
-      <th>Commissioned date</th>
-      <th>Last inspection date</th>
+      <th>Commission date</th>
+      <th>Last inspection</th>
       <th>Certificate of operations</th>
       <th>Information</th>
       <th>Notes</th>
@@ -22,11 +22,11 @@
     <% @batteries.each do |battery| %>
       <tr>
         <td><%= battery.building_id %></td>
-        <td><%= battery.type %></td>
+        <td><%= battery.building_type %></td>
         <td><%= battery.status %></td>
         <td><%= battery.employee_id %></td>
-        <td><%= battery.commissioned_date %></td>
-        <td><%= battery.last_inspection_date %></td>
+        <td><%= battery.commission_date %></td>
+        <td><%= battery.last_inspection %></td>
         <td><%= battery.certificate_of_operations %></td>
         <td><%= battery.information %></td>
         <td><%= battery.notes %></td>

@@ -17,7 +17,7 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create quote" do
     assert_difference('Quote.count') do
-      post quotes_url, params: { quote: { apartments: @quote.apartments, basements: @quote.basements, building_type: @quote.building_type, business_hours: @quote.business_hours, companies: @quote.companies, corporations: @quote.corporations, elevators: @quote.elevators, floors: @quote.floors, max_occupancy_per_floor: @quote.max_occupancy_per_floor, parking_spots: @quote.parking_spots, product_line: @quote.product_line } }
+      post quotes_url, params: { quote: { business_hours: @quote.business_hours, elevator_amount: @quote.elevator_amount, elevator_total_price: @quote.elevator_total_price, elevator_unit_price: @quote.elevator_unit_price, final_price: @quote.final_price, installation_fees: @quote.installation_fees, maximum_occupancy: @quote.maximum_occupancy, number_of_apartments: @quote.number_of_apartments, number_of_basements: @quote.number_of_basements, number_of_companies: @quote.number_of_companies, number_of_corporations: @quote.number_of_corporations, number_of_elevators: @quote.number_of_elevators, number_of_floors: @quote.number_of_floors, number_of_parking_spots: @quote.number_of_parking_spots, product_line: @quote.product_line, type_of_building: @quote.type_of_building } }
     end
 
     assert_redirected_to quote_url(Quote.last)
@@ -34,7 +34,7 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update quote" do
-    patch quote_url(@quote), params: { quote: { apartments: @quote.apartments, basements: @quote.basements, building_type: @quote.building_type, business_hours: @quote.business_hours, companies: @quote.companies, corporations: @quote.corporations, elevators: @quote.elevators, floors: @quote.floors, max_occupancy_per_floor: @quote.max_occupancy_per_floor, parking_spots: @quote.parking_spots, product_line: @quote.product_line } }
+    patch quote_url(@quote), params: { quote: { business_hours: @quote.business_hours, elevator_amount: @quote.elevator_amount, elevator_total_price: @quote.elevator_total_price, elevator_unit_price: @quote.elevator_unit_price, final_price: @quote.final_price, installation_fees: @quote.installation_fees, maximum_occupancy: @quote.maximum_occupancy, number_of_apartments: @quote.number_of_apartments, number_of_basements: @quote.number_of_basements, number_of_companies: @quote.number_of_companies, number_of_corporations: @quote.number_of_corporations, number_of_elevators: @quote.number_of_elevators, number_of_floors: @quote.number_of_floors, number_of_parking_spots: @quote.number_of_parking_spots, product_line: @quote.product_line, type_of_building: @quote.type_of_building } }
     assert_redirected_to quote_url(@quote)
   end
 

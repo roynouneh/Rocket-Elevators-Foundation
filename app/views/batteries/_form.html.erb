@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :building_id %>
-    <%= form.text_field :building_id %>
+    <%= form.number_field :building_id %>
   </div>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
+    <%= form.label :building_type %>
+    <%= form.text_field :building_type %>
   </div>
 
   <div class="field">
@@ -28,17 +28,17 @@
 
   <div class="field">
     <%= form.label :employee_id %>
-    <%= form.text_field :employee_id %>
+    <%= form.number_field :employee_id %>
   </div>
 
   <div class="field">
-    <%= form.label :commissioned_date %>
-    <%= form.date_select :commissioned_date %>
+    <%= form.label :commission_date %>
+    <%= form.date_select :commission_date %>
   </div>
 
   <div class="field">
-    <%= form.label :last_inspection_date %>
-    <%= form.date_select :last_inspection_date %>
+    <%= form.label :last_inspection %>
+    <%= form.datetime_select :last_inspection %>
   </div>
 
   <div class="field">
@@ -53,7 +53,7 @@
 
   <div class="field">
     <%= form.label :notes %>
-    <%= form.text_field :notes %>
+    <%= form.text_area :notes %>
   </div>
 
   <div class="actions">

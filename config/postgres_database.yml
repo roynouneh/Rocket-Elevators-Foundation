@@ -1,0 +1,56 @@
+#default: &default
+#  encoding: utf8
+#  adapter: postgresql
+#  port: 5432
+
+#development:
+#  <<: *default
+#  database: rocket_pg_dev
+#  #database: postgres
+#  host: localhost
+#  username: postgres
+#  password: codeboxx
+
+#test:
+#  <<: *default
+#  host: localhost
+#  username: postgres
+#  password: password
+#  database: Rocket_PG_test
+
+#production:
+#  <<: *default
+#  host: localhost
+#  username: postgres
+#  password: password
+#  database: Rocket_PG_production
+
+
+#development:
+#  <<: *default
+#  database: postgres
+#  adapter: postgresql
+#  #database: postgres
+#  host: localhost
+#  username: postgres
+#  password: codeboxx
+#  encoding: utf8
+#  post: 5432
+
+#test:
+#  host: localhost
+#  adapter: postgresql
+#  username: postgres
+#  password: codeboxx
+#  database: postgres_test
+#  encoding: utf8
+#  post: 5432
+
+#production:
+#  host: localhost
+#  adapter: postgresql
+#  username: postgres
+#  password: password
+#  database: postgres_production
+#  encoding: utf8
+#  port: 5432

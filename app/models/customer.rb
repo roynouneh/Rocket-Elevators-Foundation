@@ -1,4 +1,5 @@
 class Customer < ApplicationRecord
-    has_many :buildings
-    has_one :user
+    belongs_to :address
+    belongs_to :user
+    has_many :building
 end

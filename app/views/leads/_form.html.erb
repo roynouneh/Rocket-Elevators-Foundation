@@ -42,23 +42,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :dept_in_charge_of_elevators %>
-    <%= form.text_field :dept_in_charge_of_elevators %>
+    <%= form.label :department %>
+    <%= form.text_field :department %>
   </div>
 
   <div class="field">
     <%= form.label :message %>
-    <%= form.text_field :message %>
+    <%= form.text_area :message %>
   </div>
 
   <div class="field">
-    <%= form.label :file %>
-    <%= form.text_field :file %>
+    <%= form.label :attachment %>
+    <%= form.text_field :attachment %>
   </div>
 
   <div class="field">
-    <%= form.label :created_at %>
-    <%= form.date_select :created_at %>
+    <%= form.label :date_of_request %>
+    <%= form.datetime_select :date_of_request %>
   </div>
 
   <div class="actions">

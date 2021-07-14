@@ -11,9 +11,9 @@
       <th>Type</th>
       <th>Status</th>
       <th>Date of commissioning</th>
-      <th>Last inspection</th>
+      <th>Date of last inspection</th>
       <th>Certificate of inspection</th>
-      <th>Information</th>
+      <th>Info</th>
       <th>Notes</th>
       <th colspan="3"></th>
     </tr>
@@ -25,12 +25,12 @@
         <td><%= elevator.column_id %></td>
         <td><%= elevator.serial_number %></td>
         <td><%= elevator.model %></td>
-        <td><%= elevator.type %></td>
+        <td><%= elevator.type_of_elevator %></td>
         <td><%= elevator.status %></td>
         <td><%= elevator.date_of_commissioning %></td>
-        <td><%= elevator.last_inspection %></td>
+        <td><%= elevator.date_of_last_inspection %></td>
         <td><%= elevator.certificate_of_inspection %></td>
-        <td><%= elevator.information %></td>
+        <td><%= elevator.info %></td>
         <td><%= elevator.notes %></td>
         <td><%= link_to 'Show', elevator %></td>
         <td><%= link_to 'Edit', edit_elevator_path(elevator) %></td>

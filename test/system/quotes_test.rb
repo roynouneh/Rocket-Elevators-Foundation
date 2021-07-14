@@ -14,17 +14,22 @@ class QuotesTest < ApplicationSystemTestCase
     visit quotes_url
     click_on "New Quote"
 
-    fill_in "Apartments", with: @quote.apartments
-    fill_in "Basements", with: @quote.basements
-    fill_in "Building type", with: @quote.building_type
     fill_in "Business hours", with: @quote.business_hours
-    fill_in "Companies", with: @quote.companies
-    fill_in "Corporations", with: @quote.corporations
-    fill_in "Elevators", with: @quote.elevators
-    fill_in "Floors", with: @quote.floors
-    fill_in "Max occupancy per floor", with: @quote.max_occupancy_per_floor
-    fill_in "Parking spots", with: @quote.parking_spots
+    fill_in "Elevator amount", with: @quote.elevator_amount
+    fill_in "Elevator total price", with: @quote.elevator_total_price
+    fill_in "Elevator unit price", with: @quote.elevator_unit_price
+    fill_in "Final price", with: @quote.final_price
+    fill_in "Installation fees", with: @quote.installation_fees
+    fill_in "Maximum occupancy", with: @quote.maximum_occupancy
+    fill_in "Number of apartments", with: @quote.number_of_apartments
+    fill_in "Number of basements", with: @quote.number_of_basements
+    fill_in "Number of companies", with: @quote.number_of_companies
+    fill_in "Number of corporations", with: @quote.number_of_corporations
+    fill_in "Number of elevators", with: @quote.number_of_elevators
+    fill_in "Number of floors", with: @quote.number_of_floors
+    fill_in "Number of parking spots", with: @quote.number_of_parking_spots
     fill_in "Product line", with: @quote.product_line
+    fill_in "Type of building", with: @quote.type_of_building
     click_on "Create Quote"
 
     assert_text "Quote was successfully created"
@@ -35,17 +40,22 @@ class QuotesTest < ApplicationSystemTestCase
     visit quotes_url
     click_on "Edit", match: :first
 
-    fill_in "Apartments", with: @quote.apartments
-    fill_in "Basements", with: @quote.basements
-    fill_in "Building type", with: @quote.building_type
     fill_in "Business hours", with: @quote.business_hours
-    fill_in "Companies", with: @quote.companies
-    fill_in "Corporations", with: @quote.corporations
-    fill_in "Elevators", with: @quote.elevators
-    fill_in "Floors", with: @quote.floors
-    fill_in "Max occupancy per floor", with: @quote.max_occupancy_per_floor
-    fill_in "Parking spots", with: @quote.parking_spots
+    fill_in "Elevator amount", with: @quote.elevator_amount
+    fill_in "Elevator total price", with: @quote.elevator_total_price
+    fill_in "Elevator unit price", with: @quote.elevator_unit_price
+    fill_in "Final price", with: @quote.final_price
+    fill_in "Installation fees", with: @quote.installation_fees
+    fill_in "Maximum occupancy", with: @quote.maximum_occupancy
+    fill_in "Number of apartments", with: @quote.number_of_apartments
+    fill_in "Number of basements", with: @quote.number_of_basements
+    fill_in "Number of companies", with: @quote.number_of_companies
+    fill_in "Number of corporations", with: @quote.number_of_corporations
+    fill_in "Number of elevators", with: @quote.number_of_elevators
+    fill_in "Number of floors", with: @quote.number_of_floors
+    fill_in "Number of parking spots", with: @quote.number_of_parking_spots
     fill_in "Product line", with: @quote.product_line
+    fill_in "Type of building", with: @quote.type_of_building
     click_on "Update Quote"
 
     assert_text "Quote was successfully updated"

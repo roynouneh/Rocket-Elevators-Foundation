@@ -7,10 +7,10 @@ one:
   phone: MyString
   project_name: MyString
   project_description: MyString
-  dept_in_charge_of_elevators: MyString
-  message: MyString
-  attached_file: 
-  date_of_contact_request: 2021-06-14
+  department: MyString
+  message: MyText
+  attachment: 
+  date_of_request: 2021-06-14 13:58:15
 
 two:
   full_name: MyString
@@ -19,7 +19,7 @@ two:
   phone: MyString
   project_name: MyString
   project_description: MyString
-  dept_in_charge_of_elevators: MyString
-  message: MyString
-  attached_file: 
-  date_of_contact_request: 2021-06-14
+  department: MyString
+  message: MyText
+  attachment: 
+  date_of_request: 2021-06-14 13:58:15

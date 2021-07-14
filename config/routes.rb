@@ -1,23 +1,33 @@
 Rails.application.routes.draw do
-
   resources :elevators
   resources :columns
+  resources :addresses
   resources :batteries
-  resources :building_details
+  resources :buildingdetails
   resources :buildings
   resources :customers
-  resources :addresses
   resources :leads
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :quotes
-  resources :employees
-
+#  get 'home/index' #devise tutorial default "landing page"
+  root to: "pages#index"
   devise_for :users
-  get 'quotes/new'
-  get 'home/quote'
-  get 'home/residential'
-  get 'home/commercial'
-  root 'home#index'
+  #resources :users
+  resources :employees
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
 
+#  root 'pages#index'
+  get 'commercial' => 'pages#commercial'
+  get 'residential' => 'pages#residential'
+  get 'quote' => 'pages#quote'
+  get 'index' => 'pages#index'
+  get 'interventions' => 'pages#interventions'
+#  get 'users/:id' => 'users#show', as: :user
+#  post 'sign_up' => 'users#show'
+
+  authenticate :user do
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    get 'welcome' => redirect('/admin')
+  end
+
+
+end

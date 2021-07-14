@@ -1,9 +1,10 @@
 class User < ApplicationRecord
+#  belongs_to :employees
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   has_one :employee
-  belongs_to :customer, optional: true
- 
+  has_one :customer
 end

@@ -1,3 +1,4 @@
 class Elevator < ApplicationRecord
-    belongs_to :column
+  #self.inheritance_column = :_type_disabled
+  belongs_to :column
 end

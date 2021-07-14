@@ -14,10 +14,10 @@ class LeadsTest < ApplicationSystemTestCase
     visit leads_url
     click_on "New Lead"
 
-    fill_in "Attached file", with: @lead.attached_file
+    fill_in "Attachment", with: @lead.attachment
     fill_in "Company name", with: @lead.company_name
-    fill_in "Date of contact request", with: @lead.date_of_contact_request
-    fill_in "Dept in charge of elevators", with: @lead.dept_in_charge_of_elevators
+    fill_in "Date of request", with: @lead.date_of_request
+    fill_in "Department", with: @lead.department
     fill_in "Email", with: @lead.email
     fill_in "Full name", with: @lead.full_name
     fill_in "Message", with: @lead.message
@@ -34,10 +34,10 @@ class LeadsTest < ApplicationSystemTestCase
     visit leads_url
     click_on "Edit", match: :first
 
-    fill_in "Attached file", with: @lead.attached_file
+    fill_in "Attachment", with: @lead.attachment
     fill_in "Company name", with: @lead.company_name
-    fill_in "Date of contact request", with: @lead.date_of_contact_request
-    fill_in "Dept in charge of elevators", with: @lead.dept_in_charge_of_elevators
+    fill_in "Date of request", with: @lead.date_of_request
+    fill_in "Department", with: @lead.department
     fill_in "Email", with: @lead.email
     fill_in "Full name", with: @lead.full_name
     fill_in "Message", with: @lead.message

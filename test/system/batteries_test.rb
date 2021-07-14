@@ -15,14 +15,14 @@ class BatteriesTest < ApplicationSystemTestCase
     click_on "New Battery"
 
     fill_in "Building", with: @battery.building_id
+    fill_in "Building type", with: @battery.building_type
     fill_in "Certificate of operations", with: @battery.certificate_of_operations
-    fill_in "Commissioned date", with: @battery.commissioned_date
+    fill_in "Commission date", with: @battery.commission_date
     fill_in "Employee", with: @battery.employee_id
     fill_in "Information", with: @battery.information
-    fill_in "Last inspection date", with: @battery.last_inspection_date
+    fill_in "Last inspection", with: @battery.last_inspection
     fill_in "Notes", with: @battery.notes
     fill_in "Status", with: @battery.status
-    fill_in "Type", with: @battery.type
     click_on "Create Battery"
 
     assert_text "Battery was successfully created"
@@ -34,14 +34,14 @@ class BatteriesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Building", with: @battery.building_id
+    fill_in "Building type", with: @battery.building_type
     fill_in "Certificate of operations", with: @battery.certificate_of_operations
-    fill_in "Commissioned date", with: @battery.commissioned_date
+    fill_in "Commission date", with: @battery.commission_date
     fill_in "Employee", with: @battery.employee_id
     fill_in "Information", with: @battery.information
-    fill_in "Last inspection date", with: @battery.last_inspection_date
+    fill_in "Last inspection", with: @battery.last_inspection
     fill_in "Notes", with: @battery.notes
     fill_in "Status", with: @battery.status
-    fill_in "Type", with: @battery.type
     click_on "Update Battery"
 
     assert_text "Battery was successfully updated"

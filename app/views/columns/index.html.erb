@@ -7,7 +7,7 @@
     <tr>
       <th>Battery</th>
       <th>Type</th>
-      <th>Num floors served</th>
+      <th>Number of floors served</th>
       <th>Status</th>
       <th>Information</th>
       <th>Notes</th>
@@ -19,8 +19,8 @@
     <% @columns.each do |column| %>
       <tr>
         <td><%= column.battery_id %></td>
-        <td><%= column.type %></td>
-        <td><%= column.num_floors_served %></td>
+        <td><%= column.type_of_column %></td>
+        <td><%= column.number_of_floors_served %></td>
         <td><%= column.status %></td>
         <td><%= column.information %></td>
         <td><%= column.notes %></td>

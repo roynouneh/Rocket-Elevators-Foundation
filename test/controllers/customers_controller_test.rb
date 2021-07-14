@@ -17,7 +17,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create customer" do
     assert_difference('Customer.count') do
-      post customers_url, params: { customer: { company_contact_email: @customer.company_contact_email, company_contact_full_name: @customer.company_contact_full_name, company_contact_phone: @customer.company_contact_phone, company_description: @customer.company_description, company_name: @customer.company_name, customer_creation_date: @customer.customer_creation_date, headquarters_address: @customer.headquarters_address, service_tech_authority_full_name: @customer.service_tech_authority_full_name, technical_authority_for_service_phone: @customer.technical_authority_for_service_phone, technical_manager_email_for_service: @customer.technical_manager_email_for_service, user_id: @customer.user_id } }
+      post customers_url, params: { customer: { comp_headquarters_adress: @customer.comp_headquarters_adress, company_description: @customer.company_description, company_name: @customer.company_name, contact_email: @customer.contact_email, contact_full_name: @customer.contact_full_name, contact_phone: @customer.contact_phone, customer_creation_date: @customer.customer_creation_date, service_technical_authority: @customer.service_technical_authority, tech_auto_phone: @customer.tech_auto_phone, tech_manager_email: @customer.tech_manager_email, user_id: @customer.user_id } }
     end
 
     assert_redirected_to customer_url(Customer.last)
@@ -34,7 +34,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update customer" do
-    patch customer_url(@customer), params: { customer: { company_contact_email: @customer.company_contact_email, company_contact_full_name: @customer.company_contact_full_name, company_contact_phone: @customer.company_contact_phone, company_description: @customer.company_description, company_name: @customer.company_name, customer_creation_date: @customer.customer_creation_date, headquarters_address: @customer.headquarters_address, service_tech_authority_full_name: @customer.service_tech_authority_full_name, technical_authority_for_service_phone: @customer.technical_authority_for_service_phone, technical_manager_email_for_service: @customer.technical_manager_email_for_service, user_id: @customer.user_id } }
+    patch customer_url(@customer), params: { customer: { comp_headquarters_adress: @customer.comp_headquarters_adress, company_description: @customer.company_description, company_name: @customer.company_name, contact_email: @customer.contact_email, contact_full_name: @customer.contact_full_name, contact_phone: @customer.contact_phone, customer_creation_date: @customer.customer_creation_date, service_technical_authority: @customer.service_technical_authority, tech_auto_phone: @customer.tech_auto_phone, tech_manager_email: @customer.tech_manager_email, user_id: @customer.user_id } }
     assert_redirected_to customer_url(@customer)
   end
 

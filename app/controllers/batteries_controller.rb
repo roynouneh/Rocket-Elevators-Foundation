@@ -64,6 +64,6 @@ class BatteriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def battery_params
-      params.require(:battery).permit(:building_id, :type, :status, :employee_id, :commissioned_date, :last_inspection_date, :certificate_of_operations, :information, :notes)
+      params.require(:battery).permit(:building_id, :building_type, :status, :employee_id, :commission_date, :last_inspection, :certificate_of_operations, :information, :notes)
     end
 end

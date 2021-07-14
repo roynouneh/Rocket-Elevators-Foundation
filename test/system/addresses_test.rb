@@ -14,15 +14,15 @@ class AddressesTest < ApplicationSystemTestCase
     visit addresses_url
     click_on "New Address"
 
+    fill_in "Address type", with: @address.address_type
     fill_in "City", with: @address.city
     fill_in "Country", with: @address.country
     fill_in "Entity", with: @address.entity
     fill_in "Notes", with: @address.notes
-    fill_in "Number and street", with: @address.number_and_street
+    fill_in "Number street", with: @address.number_street
     fill_in "Postal code", with: @address.postal_code
     fill_in "Status", with: @address.status
-    fill_in "Suite or apartment", with: @address.suite_or_apartment
-    fill_in "Type of address", with: @address.address_type
+    fill_in "Suite apartment", with: @address.suite_apartment
     click_on "Create Address"
 
     assert_text "Address was successfully created"
@@ -33,15 +33,15 @@ class AddressesTest < ApplicationSystemTestCase
     visit addresses_url
     click_on "Edit", match: :first
 
+    fill_in "Address type", with: @address.address_type
     fill_in "City", with: @address.city
     fill_in "Country", with: @address.country
     fill_in "Entity", with: @address.entity
     fill_in "Notes", with: @address.notes
-    fill_in "Number and street", with: @address.number_and_street
+    fill_in "Number street", with: @address.number_street
     fill_in "Postal code", with: @address.postal_code
     fill_in "Status", with: @address.status
-    fill_in "Suite or apartment", with: @address.suite_or_apartment
-    fill_in "Type of address", with: @address.address_type
+    fill_in "Suite apartment", with: @address.suite_apartment
     click_on "Update Address"
 
     assert_text "Address was successfully updated"

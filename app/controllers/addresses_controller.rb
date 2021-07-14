@@ -19,8 +19,6 @@ class AddressesController < ApplicationController
   def edit
   end
 
- 
-
   # POST /addresses or /addresses.json
   def create
     @address = Address.new(address_params)
@@ -66,6 +64,6 @@ class AddressesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def address_params
-      params.require(:address).permit(:address_type, :status, :entity, :number_and_street, :suite_or_apartment, :city, :postal_code, :country, :notes)
+      params.require(:address).permit(:address_type, :status, :entity, :number_street, :suite_apartment, :city, :postal_code, :country, :notes)
     end
 end

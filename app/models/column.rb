@@ -1,4 +1,5 @@
 class Column < ApplicationRecord
+    #self.inheritance_column = :_type_disabled
+    has_many :elevator
     belongs_to :battery
-    has_many :elevators
 end

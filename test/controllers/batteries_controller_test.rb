@@ -17,7 +17,7 @@ class BatteriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create battery" do
     assert_difference('Battery.count') do
-      post batteries_url, params: { battery: { building_id: @battery.building_id, certificate_of_operations: @battery.certificate_of_operations, commissioned_date: @battery.commissioned_date, employee_id: @battery.employee_id, information: @battery.information, last_inspection_date: @battery.last_inspection_date, notes: @battery.notes, status: @battery.status, type: @battery.type } }
+      post batteries_url, params: { battery: { building_id: @battery.building_id, building_type: @battery.building_type, certificate_of_operations: @battery.certificate_of_operations, commission_date: @battery.commission_date, employee_id: @battery.employee_id, information: @battery.information, last_inspection: @battery.last_inspection, notes: @battery.notes, status: @battery.status } }
     end
 
     assert_redirected_to battery_url(Battery.last)
@@ -34,7 +34,7 @@ class BatteriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update battery" do
-    patch battery_url(@battery), params: { battery: { building_id: @battery.building_id, certificate_of_operations: @battery.certificate_of_operations, commissioned_date: @battery.commissioned_date, employee_id: @battery.employee_id, information: @battery.information, last_inspection_date: @battery.last_inspection_date, notes: @battery.notes, status: @battery.status, type: @battery.type } }
+    patch battery_url(@battery), params: { battery: { building_id: @battery.building_id, building_type: @battery.building_type, certificate_of_operations: @battery.certificate_of_operations, commission_date: @battery.commission_date, employee_id: @battery.employee_id, information: @battery.information, last_inspection: @battery.last_inspection, notes: @battery.notes, status: @battery.status } }
     assert_redirected_to battery_url(@battery)
   end
 

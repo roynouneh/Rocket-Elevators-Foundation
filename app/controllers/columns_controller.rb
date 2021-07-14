@@ -64,6 +64,6 @@ class ColumnsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def column_params
-      params.require(:column).permit(:battery_id, :type, :num_floors_served, :status, :information, :notes)
+      params.require(:column).permit(:battery_id, :type_of_column, :number_of_floors_served, :status, :information, :notes)
     end
 end

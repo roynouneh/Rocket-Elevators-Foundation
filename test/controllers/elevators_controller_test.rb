@@ -17,7 +17,7 @@ class ElevatorsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create elevator" do
     assert_difference('Elevator.count') do
-      post elevators_url, params: { elevator: { certificate_of_inspection: @elevator.certificate_of_inspection, column_id: @elevator.column_id, date_of_commissioning: @elevator.date_of_commissioning, information: @elevator.information, last_inspection: @elevator.last_inspection, model: @elevator.model, notes: @elevator.notes, serial_number: @elevator.serial_number, status: @elevator.status, type: @elevator.type } }
+      post elevators_url, params: { elevator: { certificate_of_inspection: @elevator.certificate_of_inspection, column_id: @elevator.column_id, date_of_commissioning: @elevator.date_of_commissioning, date_of_last_inspection: @elevator.date_of_last_inspection, info: @elevator.info, model: @elevator.model, notes: @elevator.notes, serial_number: @elevator.serial_number, status: @elevator.status, type: @elevator.type } }
     end
 
     assert_redirected_to elevator_url(Elevator.last)
@@ -34,7 +34,7 @@ class ElevatorsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update elevator" do
-    patch elevator_url(@elevator), params: { elevator: { certificate_of_inspection: @elevator.certificate_of_inspection, column_id: @elevator.column_id, date_of_commissioning: @elevator.date_of_commissioning, information: @elevator.information, last_inspection: @elevator.last_inspection, model: @elevator.model, notes: @elevator.notes, serial_number: @elevator.serial_number, status: @elevator.status, type: @elevator.type } }
+    patch elevator_url(@elevator), params: { elevator: { certificate_of_inspection: @elevator.certificate_of_inspection, column_id: @elevator.column_id, date_of_commissioning: @elevator.date_of_commissioning, date_of_last_inspection: @elevator.date_of_last_inspection, info: @elevator.info, model: @elevator.model, notes: @elevator.notes, serial_number: @elevator.serial_number, status: @elevator.status, type: @elevator.type } }
     assert_redirected_to elevator_url(@elevator)
   end
 
