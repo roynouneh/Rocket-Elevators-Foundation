@@ -217,13 +217,6 @@ employeeList = [
     #user: user15,
   },
   {
-    first_name: "Remi",
-    last_name: "Gagnon",
-    title: "Engineer",
-    email:"remi.gagnon@codeboxx.biz",
-    #user: user15,
-  },
-  {
     first_name: "Timothy",
     last_name: "Wever",
     title: "Developper",
@@ -343,7 +336,7 @@ addressEntity = ["Building", "Customer"]
 file = File.read("db/addresses.json")
 realAddr = JSON.parse(file)
 #pp realAddr["addresses"]
-realAddr["addresses"].first(25).each do |addr|
+realAddr["addresses"].first(1).each do |addr|
   #25.times do
   #pp addr.to_yaml
   address = Address.create(
@@ -373,12 +366,13 @@ realAddr["addresses"].first(25).each do |addr|
 #   )
   ############################## FAKER ADDR ###############################
 
-    employeeList.each do |e|
+  employeeList.each do |e|
     user = User.create(
       :email => e[:email],
       :password => "123456",
       :password_confirmation => "123456"
     )
+
     employee = Employee.create(
       :first_name => e[:first_name],
       :last_name => e[:last_name],
@@ -388,7 +382,7 @@ realAddr["addresses"].first(25).each do |addr|
     )
 
     #customer seed
-    25.times do
+    5.times do
       customer = Customer.create(
         #:user_id => :user[:id],
         #:user_id => 0+index,
@@ -405,9 +399,9 @@ realAddr["addresses"].first(25).each do |addr|
         :tech_auto_phone => Faker::PhoneNumber.phone_number,
         :tech_manager_email => Faker::Internet.email
       )
-
+    
       #building seed
-      50.times do
+      5.times do
       building = Building.create(
         :customer_id => customer.id,
         :address_id => address.id,
@@ -427,65 +421,65 @@ realAddr["addresses"].first(25).each do |addr|
         )
       end
 
-        #battery
-        buildingType = ["Residential", "Commercial", "Corporate", "Hybrid"].sample
-        batteryStatus = ["Active", "Inactive"].sample
-        1.times do
-          battery = Battery.create(
-            #:building_id => :Buildings[:building_id],
-            #:building_id => 0+index,
-            :building_id => building.id,
-            :building_type => buildingType,
-            :status => batteryStatus,
-            :employee_id => rand(Employee.first.id..Employee.last.id),#.sample
-            #:employee_id => 0+index,
-            :commission_date => Faker::Date.between(from: 1000.days.ago, to: Date.today),
-            :last_inspection => Faker::Date.between(from: 100.days.ago, to: Date.today),
-            :certificate_of_operations => Faker::Types.rb_string,
+      #battery
+      buildingType = ["Residential", "Commercial", "Corporate", "Hybrid"].sample
+      batteryStatus = ["Active", "Inactive"].sample
+      1.times do
+        battery = Battery.create(
+          #:building_id => :Buildings[:building_id],
+          #:building_id => 0+index,
+          :building_id => building.id,
+          :building_type => buildingType,
+          :status => batteryStatus,
+          :employee_id => rand(Employee.first.id..Employee.last.id),#.sample
+          #:employee_id => 0+index,
+          :commission_date => Faker::Date.between(from: 1000.days.ago, to: Date.today),
+          :last_inspection => Faker::Date.between(from: 100.days.ago, to: Date.today),
+          :certificate_of_operations => Faker::Types.rb_string,
+          :information => Faker::Lorem.paragraph(sentence_count: 4),
+          :notes => Faker::Lorem.paragraph(sentence_count: 8, supplemental: true)
+        )
+
+          #column
+        columnType = ["Residential", "Commercial", "Corporate"].sample
+        columnStatus = ["Active", "Inactive"].sample
+        rand(1..4).times do
+          column = Column.create(
+            #:battery_id => :Battery[:battery_id],
+            #:battery_id => 0+index,
+            :battery_id => battery.id,
+            :type_of_column => columnType,
+            :number_of_floors_served => Faker::Number.non_zero_digit,
+            :status => columnStatus,
             :information => Faker::Lorem.paragraph(sentence_count: 4),
             :notes => Faker::Lorem.paragraph(sentence_count: 8, supplemental: true)
           )
 
-            #column
-            columnType = ["Residential", "Commercial", "Corporate"].sample
-            columnStatus = ["Active", "Inactive"].sample
-          rand(1..4).times do
-              column = Column.create(
-                #:battery_id => :Battery[:battery_id],
-                #:battery_id => 0+index,
-                :battery_id => battery.id,
-                :type_of_column => columnType,
-                :number_of_floors_served => Faker::Number.non_zero_digit,
-                :status => columnStatus,
-                :information => Faker::Lorem.paragraph(sentence_count: 4),
-                :notes => Faker::Lorem.paragraph(sentence_count: 8, supplemental: true)
-              )
-
-                elevatorModel = ["Standard", "Premium", "Excelium"].sample
-                elevatorType = ["Residential", "Commercial", "Corporate"].sample
-                elevatorStatus = ["Active", "Inactive"].sample
-              rand(2..4).times do
-                  elevator = Elevator.create(
-                    #:column_id => :Column[:column_id],
-                    :column_id => column.id,
-                    #:column_id => 0+index,
-                    :serial_number => Faker::Number.leading_zero_number(digits: 10),
-                    :model => elevatorModel,
-                    :type_of_elevator => elevatorType,
-                    :status => elevatorStatus,
-                    :date_of_commissioning => Faker::Date.between(from: 1000.days.ago, to: Date.today),
-                    :date_of_last_inspection => Faker::Date.between(from: 100.days.ago, to: Date.today),
-                    :certificate_of_inspection => Faker::Lorem.sentence,
-                    :info => Faker::Lorem.paragraph(sentence_count: 4),
-                    :notes => Faker::Lorem.paragraph(sentence_count: 4, supplemental: true)
-                  )
-                end
-              end
-            end
+          elevatorModel = ["Standard", "Premium", "Excelium"].sample
+          elevatorType = ["Residential", "Commercial", "Corporate"].sample
+          elevatorStatus = ["Active", "Inactive"].sample
+          rand(2..4).times do
+            elevator = Elevator.create(
+              #:column_id => :Column[:column_id],
+              :column_id => column.id,
+              #:column_id => 0+index,
+              :serial_number => Faker::Number.leading_zero_number(digits: 10),
+              :model => elevatorModel,
+              :type_of_elevator => elevatorType,
+              :status => elevatorStatus,
+              :date_of_commissioning => Faker::Date.between(from: 1000.days.ago, to: Date.today),
+              :date_of_last_inspection => Faker::Date.between(from: 100.days.ago, to: Date.today),
+              :certificate_of_inspection => Faker::Lorem.sentence,
+              :info => Faker::Lorem.paragraph(sentence_count: 4),
+              :notes => Faker::Lorem.paragraph(sentence_count: 4, supplemental: true)
+            )
           end
         end
       end
     end
+  end
+end
+end #I can't tell why this end is needed
 
 #end
 #   end

@@ -1,0 +1,11 @@
+
+                      $("section#step-1").html(<%=# render 'interventions-form/step-1' %>);
+
+
+                      $.ajax({
+                        url: "test.html",
+                        context: document.body
+                      }).done(function() {
+                        $( this ).addClass( "done" );
+                      });
+

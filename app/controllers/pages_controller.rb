@@ -9,8 +9,5 @@ class PagesController < ApplicationController
   end
   def quote
   end
-  def interventions
-    @employees = Employee.all
-  end
 end
 

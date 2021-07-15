@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interventions
   resources :elevators
   resources :columns
   resources :addresses
@@ -20,7 +21,6 @@ Rails.application.routes.draw do
   get 'residential' => 'pages#residential'
   get 'quote' => 'pages#quote'
   get 'index' => 'pages#index'
-  get 'interventions' => 'pages#interventions'
 #  get 'users/:id' => 'users#show', as: :user
 #  post 'sign_up' => 'users#show'
 
