@@ -20,13 +20,35 @@ class InterventionsController < ApplicationController
   def edit
   end
 
-#CODEBOXX
-# def get_customer_buidings
-#   puts "gest_customer_"
-#   customer_id = params[:customer_id]
-#   buildings = Building.where(customer_id: customer_id)
-#   render json: buildings
-# end
+  def get_form_customer_selector
+    employee_id = params[:employee_id]
+    @customers = Customer.where(user_id: employee_id)
+    render partial: 'step-1', locals: { customers: @customers }
+  end
+
+  def get_form_building_selector
+    customer_id = params[:customer_id]
+    @buildings = Building.where(customer_id: customer_id)
+    render partial: 'step-2', locals: { buildings: @buildings }
+  end
+
+  def get_form_battery_selector
+    building_id = params[:building_id]
+    @batteries = Battery.where(building_id: building_id)
+    render partial: 'step-3', locals: { batteries: @batteries }
+  end
+  
+  def get_form_column_selector
+    battery_id = params[:battery_id]
+    @columns = Column.where(battery: battery_id)
+    render partial: 'step-4', locals: { columns: @columns }
+  end
+
+  def get_form_elevator_selector
+    column_id = params[:column_id]
+    @elevators = Elevator.where(column_id: column_id)
+    render partial: 'step-5', locals: { elevators: @elevators }
+  end
 
   # POST /interventions or /interventions.json
   def create
@@ -73,6 +95,6 @@ class InterventionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def intervention_params
-      params.fetch(:intervention, {})
+      params.require(:intervention).permit(:author, :building_id, :battery_id, :column_id, :elevator_id, :employee_id, :start_date_and_time_of_the_intervention, :end_date_and_time_of_the_intervention, :result, :report, :status)
     end
 end

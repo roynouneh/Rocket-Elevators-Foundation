@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :interventions
   resources :elevators
   resources :columns
   resources :addresses
@@ -24,9 +23,17 @@ Rails.application.routes.draw do
 #  get 'users/:id' => 'users#show', as: :user
 #  post 'sign_up' => 'users#show'
 
+
   authenticate :user do
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
     get 'welcome' => redirect('/admin')
+
+    resources :interventions
+    get 'get_form_customer_selector', action: :get_form_customer_selector, controller: 'interventions'
+    get 'get_form_building_selector', action: :get_form_building_selector, controller: 'interventions'
+    get 'get_form_battery_selector',  action: :get_form_battery_selector,  controller: 'interventions'
+    get 'get_form_column_selector',   action: :get_form_column_selector,   controller: 'interventions'
+    get 'get_form_elevator_selector', action: :get_form_elevator_selector, controller: 'interventions'
   end
 
 
