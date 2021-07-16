@@ -18,6 +18,8 @@ class InterventionsController < ApplicationController
 
   # GET /interventions/1/edit
   def edit
+    @employees = Employee.order(:first_name)
+    @intervention = Intervention.find(params[:id])
   end
 
   def get_form_customer_selector

@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     get 'get_form_battery_selector',  action: :get_form_battery_selector,  controller: 'interventions'
     get 'get_form_column_selector',   action: :get_form_column_selector,   controller: 'interventions'
     get 'get_form_elevator_selector', action: :get_form_elevator_selector, controller: 'interventions'
+    
   end
 
 

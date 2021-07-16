@@ -30,7 +30,8 @@
         <td>&nbsp;</td>
         <td style="font-weight:bold;text-decoration:underline;"><%= link_to 'Edit', edit_intervention_path(intervention) %></td>
         <td>&nbsp;</td>
-        <td style="font-weight:bold;text-decoration:underline;"><%= link_to 'Destroy', intervention, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;</td>
+        <td style="font-weight:bold;text-decoration:underline;"><%= link_to "delete", intervention_path(intervention), method: :delete %>&nbsp;</td>
+        
       </tr>
     <% end %>
   </tbody>
