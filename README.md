@@ -1,6 +1,6 @@
 # Consolidation Week
 
-Rails app: https://rocketfoundation.roy.bz/
+Rails app: http://rocketfoundation.roy.bz/
 REST API: https://thawing-citadel-51283.herokuapp.com/
 
 
